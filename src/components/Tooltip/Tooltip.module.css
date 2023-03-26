@@ -1,0 +1,81 @@
+.tooltipContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltipContainer > svg {
+    background-color: var(--light-grayish-blue);
+    padding: 8px;
+    border-radius: 100px;
+    position: relative;
+    z-index: 9999;
+}
+
+@media screen and (max-width: 768px) {
+    .tooltipContainer > svg {
+        margin-top: 4px;
+    }
+}
+
+.tooltipContainer:hover > svg {
+    color: var(--light-grayish-blue);
+    background-color: var(--very-dark-grayish-blue);
+    transition: all ease-in-out 0.2s;
+}
+
+.tooltip {
+    position: absolute;
+    top: calc(-100% - 50px);
+    transform: translateX(-50%);
+    background-color: var(--very-dark-grayish-blue);
+    color: hsl(212, 23%, 69%);
+    letter-spacing: 4px;
+    padding: 20px 25px;
+    border-radius: 10px;
+    z-index: 1;
+    font-size: 0.7rem;
+}
+
+@media screen and (max-width: 768px) {
+    .tooltip {
+        top: -15px;
+        height: 4.7rem;
+        transform: translateX(-16.8rem);
+        width: 20.5rem;
+        border-radius: 0 0 10px 10px;
+    }
+}
+
+.tooltipContainer .tooltip:after {
+    border-left: solid transparent 10px;
+    border-right: solid transparent 10px;
+    border-top: solid var(--very-dark-grayish-blue) 10px;
+    bottom: -10px;
+    content: ' ';
+    height: 0;
+    left: 51.5%;
+    position: absolute;
+    width: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .tooltipContainer .tooltip:after {
+        display: none;
+    }
+}
+
+.tooltipRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tooltipRow > span {
+    margin: 0 5px;
+}
+
+.tooltipRow > img {
+    max-width: 24px;
+    max-height: 24px;
+    margin: 0 8px;
+}
